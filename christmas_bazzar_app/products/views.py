@@ -34,6 +34,14 @@ def create_product(request):
         return render(request, 'products/add_product.html', context)
 
 
+def product_details(request, pk):
+    product = Product.objects.get(pk=pk)
+    context = {
+        'product': product,
+    }
+    return render(request, 'products/product_details.html', context)
+
+
 def edit_product(request):
     pass
 

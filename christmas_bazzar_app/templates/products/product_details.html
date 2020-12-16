@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    <div class="d-flex" style="border: 1px solid grey; margin: 5% 0%; padding: 5px">
+        <div class="d-inline p-2 w-50">
+            <img src="{{ product.image.url }}" class="w-50 rounded mx-auto d-block">
+        </div>
+        <div class="d-inline p-5 w-50">
+            <div>
+                <h5>{{ product.name }}</h5>
+            </div>
+            <p class="mt-2">{{ product.description }}</p>
+            <div class="d-flex justify-content-between">
+                <smaLl><a href=""> owner: someone </a></smaLl>
+            </div>
+            <div>
+                {% if can_edit %}
+                    <a href="{% url 'edit pet' pet.id %}" class="btn btn-success">Edit</a>
+                {% endif %}
+                {% if can_delete %}
+                    <a href="{% url 'delete pet' pet.id %}" class="btn btn-danger">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
