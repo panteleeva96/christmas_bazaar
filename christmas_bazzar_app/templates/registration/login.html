@@ -1,0 +1,13 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    {% load bootstrap4 %}
+    <div class="container p-3">
+        <form class="w-50 m-auto" method="post" style="border: 1px solid grey; margin: 10% 0%; padding: 5% 5%" action="{% url 'login' %}">
+            <h2>Login</h2>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+{% endblock %}

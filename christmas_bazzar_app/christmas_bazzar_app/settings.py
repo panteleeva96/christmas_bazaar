@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'common',
-    'products'
+    'products',
+    'accounts',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,5 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = '/products'

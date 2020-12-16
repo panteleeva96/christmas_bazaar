@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -13,6 +14,7 @@ def get_products(request):
     return render(request, 'products/products_list.html', context)
 
 
+@login_required
 def create_product(request):
     if request.method == "GET":
         context = {

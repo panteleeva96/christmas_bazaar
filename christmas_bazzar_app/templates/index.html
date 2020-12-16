@@ -1,23 +1,27 @@
 {% extends 'shared/base.html' %}
 {% block content %}
-         <div class="jumbotron parent">
-            <img style="width: 90%" src="https://www.instreatham.com/wp-content/uploads/2019/11/christmas-bazaar-1600x900.jpg" alt="">
-            <div class="absolute">
-               <h1 class="display-4">Welcome to charitable Christmas Bazar</h1>
-               <hr class="my-4">
-               <div class="inner cover">
-                  <h1 class="cover-heading"></h1>
-                  <div class="row">
-                     <div class="col-lg-6">
-                        <p class="lead">Already have an account? <br><a href="#" class="btn btn-lg btn-secondary">sign in</a></p>
-                     </div>
-                     <div class="col-lg-6">
-                        <p class="lead"> Do not have an account? <br>
-                           <a href="#" class="btn btn-lg btn-secondary">sign up</a>
-                        </p>
-                     </div>
-                  </div>
-               </div>
+    <div class="jumbotron parent text-center">
+        <img style="width: 60%"
+             src="https://www.instreatham.com/wp-content/uploads/2019/11/christmas-bazaar-1600x900.jpg" alt="">
+        <div class="absolute">
+            <h1 class="display-4">Welcome to charitable Christmas Bazar</h1>
+            <hr class="my-4">
+            <div class="inner cover">
+                <h1 class="cover-heading"></h1>
+                {% if not user.is_authenticated %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="lead">Already have an account? <br><a href="#" class="btn btn-lg btn-secondary">sign
+                                in</a></p>
+                        </div>
+                        <div class="col-lg-6">
+                            <p class="lead"> Do not have an account? <br>
+                                <a href="#" class="btn btn-lg btn-secondary">sign up</a>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
-         </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    {% load bootstrap4 %}
+    <h1 class="text-center">Sign Up</h1>
+    <div class="row d-flex justify-content-center">
+        <form method="post" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form user_form %}
+            {% buttons %}
+                <button class="btn btn-primary">Submit</button>
+                 <span>Have an account? <a href="{% url 'login' %}" style="color:orange">Sign in here</a></span>
+            {% endbuttons %}
+        </form>
+    </div>
+{% endblock %}
