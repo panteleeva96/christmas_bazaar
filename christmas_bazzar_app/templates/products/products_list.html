@@ -10,7 +10,10 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">Price: {{ product.price|floatformat:2 }} lv.</p>
-                        <a href="{% url 'detailed product' product.id %}" class="btn btn-primary">View</a>
+                        <div>
+                            <a href="{% url 'detailed product' product.id %}" class="btn btn-info">View</a>
+                            <a href="{% url 'detailed product' product.id %}" class="btn btn-success">Add to cart <i class="fa fa-shopping-cart"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

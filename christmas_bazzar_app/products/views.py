@@ -9,7 +9,6 @@ from products.models import Product
 def get_products(request):
     context = {
         'products': Product.objects.all(),
-
     }
     return render(request, 'products/products_list.html', context)
 
@@ -38,6 +37,9 @@ def product_details(request, pk):
     product = Product.objects.get(pk=pk)
     context = {
         'product': product,
+        'can_edit': product.sold_by.id == request.user.id,
+        'can_delete': product.sold_by.id == request.user.id,
+        'can_buy': product.sold_by.id != request.user.id
     }
     return render(request, 'products/product_details.html', context)
 
