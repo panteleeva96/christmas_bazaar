@@ -6,7 +6,7 @@ from products.models import Product
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        exclude = ('is_available',)
+        exclude = ('is_available', 'sold_by',)
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),

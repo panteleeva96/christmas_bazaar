@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    <div class="text-center">
+        <h1>Hello, {{ profile.username }}!</h1>
+        <h5>This is your profile</h5>
+        <img class="rounded-circle mb-3" src="https://www.seekpng.com/png/detail/413-4139803_unknown-profile-profile-picture-unknown.png"
+             alt="Generic placeholder image"
+             width="140"
+             height="140">
+        <div class=>
+            <h5>You have donated: {{ donated_money|floatformat:2 }} BGN.</h5>
+            {% if products_to_ship_count > 0 %}
+                <h5>You have to ship {{ products_to_ship_count }} products</h5><a href="{% url 'ship products' %}" class="btn btn-success">Ship</a>
+            {% endif %}
+        </div>
+
+    </div>
+    <hr>
+    {% if products %}
+        <h2 class='text-center'>These are your products</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {% for product in products %}
+                {% include 'partial/product_card.html' with product=product owner=owner%}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center">
+            <h2>You can add things to sell for charity</h2>
+            <a href="{% url 'add product' %}" class="btn btn-success">Here</a>
+        </div>
+    {% endif %}
+{% endblock %}

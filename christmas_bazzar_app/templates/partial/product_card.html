@@ -1,0 +1,21 @@
+<div class="col p-5">
+    <div class="card h-100" style="width: 18rem;">
+        <img src="{{ product.image.url }}" class="card-img-top" alt="..." width="250" height="300">
+        <div class="card-body text-center">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <hr>
+            <p class="card-subtitle mb-2">Price: {{ product.price|floatformat:2 }} lv.</p>
+            <div>
+                {#                <a href="{% url 'detailed product' product.id %}" class="btn btn-info">View</a>#}
+                {% if owner %}
+                    <a href="{% url 'edit product' product.id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'delete product' product.id %}" class="btn btn-danger">Delete</a>
+                {% else %}
+                    <a href="{% url 'add to cart' product.id %}" class="btn btn-success">Add to cart <i
+                            class="fa fa-shopping-cart"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

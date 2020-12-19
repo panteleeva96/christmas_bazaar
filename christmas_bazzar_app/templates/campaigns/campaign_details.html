@@ -1,0 +1,14 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    <div class="container p-3">
+        <div class="card mb-3">
+            <img class="card-img-top" src="{{ campaign.image.url }}" alt="{{ campaign.name }} Image">
+            <div class="card-body">
+                <h6 class="card-text">Raised money from this bazaar: {{ campaign.raised_money|floatformat:2 }} BGN</h6>
+                <hr>
+                <h5 class="card-title">{{ campaign.name }}</h5>
+                {% include 'campaigns/description_content.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

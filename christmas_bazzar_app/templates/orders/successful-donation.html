@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+    <div class="col-lg-12 text-center">
+        <h1>Congrats! Your order {{ order.id }} is successful.</h1>
+        <h2>You donated {{ order.amount|floatformat:2 }} to Bulgarian Christmas Campaign!</h2>
+        <img style="width: 500px" src="https://s.wsj.net/public/resources/images/ON-CY045_201904_NS_20190328161523.gif"
+             alt="">
+        <div class="p-2">
+            <a href="{% url 'products list' %}" class="btn btn-success">Go Back</a>
+        </div>
+    </div>
+{% endblock %}

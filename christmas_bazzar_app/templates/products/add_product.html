@@ -1,6 +1,7 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
+    <h1 class="text-center">Add new product</h1>
     <form class="col-lg-6 offset-lg-3 p-4" action="{% url 'add product' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
@@ -20,5 +21,6 @@
             {{ form.image }}
         </div>
         <input type="submit" value="Create" class="btn btn-primary mt-3">
+        {{ form.errors }}
     </form>
 {% endblock %}
