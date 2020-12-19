@@ -20,8 +20,6 @@ class ProductListView(ListView):
         return self.model.objects.all()
 
 
-
-
 class ProductDetailsView(DetailView):
     template_name = 'products/product_details.html'
     model = Product
