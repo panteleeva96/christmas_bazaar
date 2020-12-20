@@ -8,6 +8,7 @@
             {% csrf_token %}
             {% bootstrap_form form %}
             <button type="submit" class="btn btn-primary">Login</button>
+             <span>Don't have an account? <a href="{% url 'sign up user' %}" style="color:orange">Sign up here</a></span>
         </form>
     </div>
 {% endblock %}

@@ -17,7 +17,7 @@ class ProductListView(ListView):
         if self.request.user.is_authenticated:
             qs = self.model.objects.exclude(sold_by=self.request.user).filter(is_available=True)
             return qs
-        return self.model.objects.all()
+        return self.model.objects.all().filter(is_available=True)
 
 
 class ProductDetailsView(DetailView):

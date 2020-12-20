@@ -1,3 +1,4 @@
+{% load cart_notification %}
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2F4F4F;">
     <div class="navbar-brand">Christmas Bazaar</div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -27,7 +28,8 @@
                     <a class="nav-link" href="{% url 'user profile' %}">Hello, {{ user.username }}!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products in my cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    {% update_notification_in_cart user=user %}
+                    {#                    <a class="nav-link" href="{% url 'products in my cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"> <span class="badge badge-pill badge-danger">4</span></i></a>#}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'sign out user' %}">Sign out</a>

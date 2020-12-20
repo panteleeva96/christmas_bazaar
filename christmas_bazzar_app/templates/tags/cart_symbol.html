@@ -1,0 +1,5 @@
+{% if products_in_cart > 0 %}
+    <a class="nav-link" href="{% url 'products in my cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"> <span class="badge badge-pill badge-danger">{{ products_in_cart }}</span></i></a>
+{% else %}
+    <a class="nav-link" href="{% url 'products in my cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+{% endif %}
